@@ -78,8 +78,8 @@ with tf.Session() as sess:
             batch_x, batch_y = X_train[offset:end], y_train[offset:end]
             sess.run(training_operation, feed_dict={x: batch_x, y: batch_y})
             
-        training_accuracy = evaluate(X_train, y_train, train_keep_prob)
-        validation_accuracy = evaluate(X_valid, y_valid, valid_keep_prob)
+        training_accuracy = evaluate(X_train, y_train)
+        validation_accuracy = evaluate(X_valid, y_valid)
         train_results.append(training_accuracy)
         valid_results.append(validation_accuracy)
         print("EPOCH {} ...".format(i+1))
